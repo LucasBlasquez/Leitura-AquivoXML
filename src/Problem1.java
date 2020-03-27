@@ -62,29 +62,23 @@ public class Problem1 {
 					
 					//acessando ide
 					NodeList listaNoIde = elementoInfCte.getChildNodes();
-					for (int j = 0; j < listaNoIde.getLength(); j++) {
-						Node noIde = listaNoIde.item(1); // local do ide
-						if (noIde.getNodeType() == Node.ELEMENT_NODE) {
-							Element elementoIde = (Element) noIde;
-							//pegando serie e emissao
-							serie = Integer.parseInt(elementoIde.getElementsByTagName("serie").item(0).getTextContent());
-							emissao = elementoIde.getElementsByTagName("dhEmi").item(0).getTextContent(); 
-							objCte.setSerie(serie);
-							objCte.setEmissao(emissao);
-							break; // quando achar os atributos
-						}
+					Node noIde = listaNoIde.item(1); // local do ide
+					if (noIde.getNodeType() == Node.ELEMENT_NODE) {
+						Element elementoIde = (Element) noIde;
+						// pegando serie e emissao
+						serie = Integer.parseInt(elementoIde.getElementsByTagName("serie").item(0).getTextContent());
+						emissao = elementoIde.getElementsByTagName("dhEmi").item(0).getTextContent();
+						objCte.setSerie(serie);
+						objCte.setEmissao(emissao);
 					}
-					
+
 					NodeList listaNoVTPrest = elementoInfCte.getChildNodes();
-					for (int k = 0; k < listaNoIde.getLength(); k++) {
-						Node noIde = listaNoVTPrest.item(11); // local do vTPrest
-						if (noIde.getNodeType() == Node.ELEMENT_NODE) {
-							Element elementoIde = (Element) noIde;
-							//pegando valor
-							valor = Double.parseDouble(elementoIde.getElementsByTagName("vTPrest").item(0).getTextContent());
-							objCte.setValor(valor);
-							break; // quando achar os atributos
-						}
+					Node noVPrest = listaNoVTPrest.item(11); // local do vTPrest
+					if (noVPrest.getNodeType() == Node.ELEMENT_NODE) {
+						Element elementoIde = (Element) noVPrest;
+						// pegando valor
+						valor = Double.parseDouble(elementoIde.getElementsByTagName("vTPrest").item(0).getTextContent());
+						objCte.setValor(valor);
 					}
 				}
 			}	
