@@ -72,8 +72,9 @@ public class Problem1 {
 						objCte.setEmissao(emissao);
 					}
 
+					//acessando vTPrest
 					NodeList listaNoVTPrest = elementoInfCte.getChildNodes();
-					Node noVPrest = listaNoVTPrest.item(11); // local do vTPrest
+					Node noVPrest = listaNoVTPrest.item(11); // local do vTPrest na lista
 					if (noVPrest.getNodeType() == Node.ELEMENT_NODE) {
 						Element elementoIde = (Element) noVPrest;
 						// pegando valor
