@@ -1,1 +1,1 @@
-Comparing reading XML APIs in a real world problem between Java and Python.
+Comparing reading XML APIs between Java and Python in a real world problem.
